@@ -1,4 +1,4 @@
-# Deep Q-network keras implementation to solve OpenAI gym Cartpole-v1 environment
+# Double Deep Q-network keras implementation to solve OpenAI gym Cartpole-v1 environment
 ### Requirements
 In order to able to run the solution, few steps need to be verified/installed:
   - gym
