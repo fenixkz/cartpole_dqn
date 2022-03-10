@@ -24,3 +24,9 @@ After that the agent starts learning. You can tune the following parameters:
 After the training completed, the plot of rewards over number of episodes is plotted. Also, the model is saved in the current directory under the name **dqn.h5**.
 </br>
 You can run `python3 evaluate.py` to see how long the model can balance the pole.
+
+### Results
+One of the possible results obtained:
+![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/main/Figure_1.png)
+
+And finally, the maximum number of steps the model can balance is: 324
