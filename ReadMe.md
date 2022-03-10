@@ -29,4 +29,4 @@ You can run `python3 evaluate.py` to see how long the model can balance the pole
 One of the possible results obtained:
 ![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/main/Figure_1.png)
 
-And finally, the maximum number of steps the model can balance is: 324
+And finally, the maximum number of steps the model can balance is: **324**
