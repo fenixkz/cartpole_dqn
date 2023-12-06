@@ -1,32 +1,43 @@
 # Double Deep Q-network keras implementation to solve OpenAI gym Cartpole-v1 environment
-### Requirements
-In order to able to run the solution, few steps need to be verified/installed:
-  - gym
-    `pip3 install gym`
-  - tensorflow
-    `pip3 install tensorflow`
-  - keras
-    `pip3 install keras`
+This project provides a Keras implementation of the Double Deep Q-Network (DDQN) algorithm to solve the CartPole-v1 environment provided by OpenAI's Gym library.
+### Prerequisites
+The following dependencies are required to run this project:
   - python 3.8.10
+  - gym
+  - tensorflow
+  - keras
   - matplotlib
-### Running
+  - gym[classic_control]
+
+You can install these packages using pip
+
+ - `pip3 install gym tensorflow keras matplotlib`
+ - `pip3 install gym[classic_control]`
+
+### Usage
+Navigate to the CartPole directory and run the *train.py* script:
 ```
 $ cd CartPole
 $ python3 train.py
 ```
+This starts the training process for the agent. You can modify the following parameters:
+  - Number of episodes (default: 400)
+  - Sample_size (default: 32)
+  - Gamma (default: 0.9)
+  - Epsilon and epsilon' decay (default: 0.99 for both)
 
-After that the agent starts learning. You can tune the following parameters:
-  - Number of episodes (current 400)
-  - sample_size (current 32)
-  - gamma (current 0.9)
-  - epsilon and epsilon' decay (0.99 both)
-
-After the training completed, the plot of rewards over number of episodes is plotted. Also, the model is saved in the current directory under the name **dqn.h5**.
+Upon completion of the training, the program will plot the rewards over the number of episodes. It will also save the model as **dqn.h5** in the *models* directory.
 </br>
-You can run `python3 evaluate.py` to see how long the model can balance the pole.
+To evaluate the performance of the trained model, you can run the *evaluate.py* script with several arguments:
+  - --render to render the environment 
+  - -- untrained to use untrained network
 
+`python3 evaluate.py --render --untrained`
+
+</br>
+You can also
 ### Results
-One of the possible results obtained:
+Here is an example of the potential results:
 ![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/main/Figure_1.png)
 
-And finally, the maximum number of steps the model can balance is: **324**
+In this instance, the maximum number of steps the model was able to balance the pole was **324**.

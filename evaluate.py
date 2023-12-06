@@ -7,20 +7,36 @@ import matplotlib.pyplot as plt
 import random
 import os
 from tensorflow import keras
+import argparse 
 
-model_name = 'dqn.h5'
+parser = argparse.ArgumentParser(description='Render environment.')
+parser.add_argument('--render', action='store_true',
+                    help='render the environment')
+parser.add_argument('--untrained', action='store_true', default=False,
+                    help='use untrained model')
+args = parser.parse_args()
+
+if args.untrained:
+    model_name = 'dqn_untrained.h5'
+else:
+    model_name = 'dqn.h5'
 name = os.path.join(os.path.abspath(os.getcwd()), 'models', model_name)
 model = keras.models.load_model(name)
 
-env = gym.make("CartPole-v1", render_mode='human')
+if args.render:
+    env = gym.make("CartPole-v1", render_mode='human')
+else:
+    env = gym.make("CartPole-v1")
 done = False
 state = env.reset()[0].reshape(1,4)
 total_reward = 0
 while not done:
-    env.render()
-    action = np.argmax(model.predict(state))
+    if args.render:
+        env.render()
+    action = np.argmax(model.predict(state, verbose=0))
     nextState, reward, done, x, _ = env.step(action)
     nextState = nextState.reshape(1, 4)
     total_reward += reward
     state = nextState
-print(total_reward)
+print(f'Total reward: {total_reward}')
+env.close()

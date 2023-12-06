@@ -29,35 +29,18 @@ class DQN:
         model.compile(loss='mse', optimizer = Adam(0.001))
         return model
 
-    # def update(self, state, q_values): kernel_initializer=keras.initializers.Zeros()
-    #     y_pred = self.model.predict(np.expand_dims(state.reshape(1,self.input_shape), axis=0))
-    #     self.model.fit(state.reshape(-1,1,self.input_shape), q_values, verbose = 0)
-
     def replay(self, memory, gamma, sample_size):
-        # start_time = time.time()
-
         states, actions, rewards, dones, nextStates = memory.sample(sample_size)
 
         states = np.asarray(states).reshape(-1, self.input_shape)
         nextStates = np.asarray(nextStates).reshape(-1, self.input_shape)
         q_values = self.model.predict(states) # (sample_size, output_shape)
         q_nexts = self.target_model.predict(nextStates)
-        #
-        # print("Before fit --- %s seconds ---" % (time.time() - start_time))
-        # print(q_values)
-        # print(np.shape(q_values))
-        # print(actions)
-        # print(q_nexts)
-        # print(rewards)
-        # print("=========")
         for i in range(sample_size):
             if (dones[i]):
                 q_values[i][actions[i]] = rewards[i]
             else:
                 q_values[i][actions[i]] = rewards[i] + gamma * np.max(q_nexts[i])
-        # print(q_values)
-        # print(np.shape(q_values))
-        # print("------------")
         self.model.fit(states, q_values, epochs = sample_size, verbose = 0)
 
     def target_update(self):
