@@ -8,8 +8,8 @@ import random
 import os
 from tensorflow import keras
 
-path = os.path.abspath(os.getcwd())
-name = str(path) + "/dqn.h5"
+model_name = 'dqn.h5'
+name = os.path.join(os.path.abspath(os.getcwd()), 'models', model_name)
 model = keras.models.load_model(name)
 
 env = gym.make("CartPole-v1", render_mode='human')
