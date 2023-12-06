@@ -34,8 +34,6 @@ To evaluate the performance of the trained model, you can run the *evaluate.py* 
 
 `python3 evaluate.py --render --untrained`
 
-</br>
-You can also
 ### Results
 Here is an example of the potential results:
 ![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/main/Figure_1.png)
