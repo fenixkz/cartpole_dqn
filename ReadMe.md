@@ -1,5 +1,6 @@
 # Deep Q-Network and Double Deep Q-Network implementation with PyTorch
 This project provides a PyTorch implementation of the Deep Q-Network ([DQN](https://arxiv.org/pdf/1312.5602.pdf)) and Double Deep Q-Network ([DDQN](https://arxiv.org/pdf/1509.06461.pdf)) reinforcement learning algorithms to solve the CartPole-v1 environment provided by OpenAI's Gym library.
+
 ### Prerequisites
 The following dependencies are required to run this project:
   - python 3.8.10
@@ -13,14 +14,15 @@ You can install these packages using pip
  - `pip3 install gym torch matplotlib`
  - `pip3 install gym[classic_control]`
 
-### Usage
+### Launching
 Navigate to the CartPole directory and run the *train.py* script:
 ```
 $ cd CartPole
 $ python3 train.py
 ```
-This starts the training process for the agent. 
+This starts the training process for the agent. Upon completion of the training, the program will plot the history of rewards over the number of episodes. It will also save the model as **DQN.pth** in the *models* directory.
 
+### Hyperparameters
 You can tune the following hyperparameters to better train the model: 
   - Memory_size (default: 10000)
   - Sample_size (default: 64)
@@ -34,12 +36,13 @@ You can tune the following hyperparameters to better train the model:
 
 These hyperparameters are stored in *config/hyperparameters.py* file.
 
-Upon completion of the training, the program will plot the rewards over the number of episodes. It will also save the model as **dqn.pth** in the *models* directory.
+### Evaluation
 </br>
-To evaluate the performance of the trained model, you can run the *evaluate.py* script with several arguments:
+To evaluate the performance of the trained model, you can run the `evaluate.py` script with several arguments:
   - --render to render the environment 
   - --untrained to use untrained network
   - --model with string argument to choose the model to test (DQN or DDQN) 
+
 `python3 evaluate.py --render --model DDQN`
 
 ### Docker
