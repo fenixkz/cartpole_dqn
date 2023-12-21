@@ -1,5 +1,5 @@
 # Deep Q-Network and Double Deep Q-Network implementation with PyTorch
-This project provides a PyTorch implementation of the Deep Q-Network (DQN) and Double Deep Q-Network (DDQN) reinforcement learning algorithms to solve the CartPole-v1 environment provided by OpenAI's Gym library.
+This project provides a PyTorch implementation of the Deep Q-Network ([DQN](https://arxiv.org/pdf/1312.5602.pdf)) and Double Deep Q-Network ([DDQN](https://arxiv.org/pdf/1509.06461.pdf)) reinforcement learning algorithms to solve the CartPole-v1 environment provided by OpenAI's Gym library.
 ### Prerequisites
 The following dependencies are required to run this project:
   - python 3.8.10
@@ -53,7 +53,7 @@ And then run the bash script *start_docker.sh*
 
 `./start_docker.sh`
 
-Note that if you want to use CUDA inside the docker image, you have to have **NVIDIA Container Toolkit**. The installation process can be found ![here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+Note that if you want to use CUDA inside the docker image, you have to have **NVIDIA Container Toolkit**. The installation process can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
 
 Also, this script runs the following command `xhost +local:root`. This command allows any local user to access your X server. It's a potential security risk, so be sure you understand the implications.
 
