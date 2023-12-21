@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import random
 import os
 import torch
-import argparse 
+import argparse
 
 parser = argparse.ArgumentParser(description='Render environment.')
 parser.add_argument('--render', action='store_true',
@@ -17,9 +17,9 @@ parser.add_argument('--untrained', action='store_true', default=False,
 args = parser.parse_args()
 
 if args.untrained:
-    model_name = 'dqn_untrained.pth'
+    model_name = 'untrained.pth'
 else:
-    model_name = 'dqn.pth'
+    model_name = 'ddqn.pth'
 name = os.path.join(os.path.abspath(os.getcwd()), 'models', model_name)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

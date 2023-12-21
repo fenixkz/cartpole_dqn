@@ -71,7 +71,8 @@ if __name__ == '__main__':
         print("Training was interrupted by the user, saving the network ...")
     finally:
         # Save the model
-        model_name = 'dqn.pth'
+        # model_name = hyperparameters.algorithm + ".pth"
+        model_name = "untrained.pth"
         model_dir = os.path.join(os.path.abspath(os.getcwd()), 'models')
         os.makedirs(model_dir, exist_ok=True)  # Ensure the directory exists
         name = os.path.join(model_dir, model_name)

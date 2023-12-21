@@ -59,11 +59,11 @@ Also, this script runs the following command `xhost +local:root`. This command a
 
 ### Results
 Here is an example of the potential results (DQN):
-![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/torch/DQN_rewards.png)
+![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/torch/figures/DQN_rewards.png)
 
 In this instance, the maximum number of steps the model was able to balance the pole in evaluate mode was **305**.
 
 Here is an example of training results for DDQN:
-![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/torch/DDQN_rewards.png)
+![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/torch/figures/DDQN_rewards.png)
 
 In this case, in evaluate mode the pole was banalcing for hours
