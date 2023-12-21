@@ -37,8 +37,8 @@ You can tune the following hyperparameters to better train the model:
 These hyperparameters are stored in *config/hyperparameters.py* file.
 
 ### Evaluation
-</br>
 To evaluate the performance of the trained model, you can run the `evaluate.py` script with several arguments:
+
   - --render to render the environment 
   - --untrained to use untrained network
   - --model with string argument to choose the model to test (DQN or DDQN) 
