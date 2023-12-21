@@ -39,8 +39,8 @@ Upon completion of the training, the program will plot the rewards over the numb
 To evaluate the performance of the trained model, you can run the *evaluate.py* script with several arguments:
   - --render to render the environment 
   - --untrained to use untrained network
-
-`python3 evaluate.py --render --untrained`
+  - --model with string argument to choose the model to test (DQN or DDQN) 
+`python3 evaluate.py --render --model DDQN`
 
 ### Docker
 Alternatively, you can run this repository inside the docker container without the need of installing the required packages. For that pull the image from the Docker Hub:
@@ -49,7 +49,7 @@ Alternatively, you can run this repository inside the docker container without t
 
 And then run the bash script *start_docker.sh*
 
-`chmod +x run_docker.sh`
+`chmod +x start_docker.sh`
 
 `./start_docker.sh`
 
@@ -61,9 +61,9 @@ Also, this script runs the following command `xhost +local:root`. This command a
 Here is an example of the potential results (DQN):
 ![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/torch/figures/DQN_rewards.png)
 
-In this instance, the maximum number of steps the model was able to balance the pole in evaluate mode was **305**.
+In this instance, the maximum number of steps the model was able to balance the pole in evaluate mode was **235**.
 
 Here is an example of training results for DDQN:
 ![Rewards](https://github.com/fenixkz/cartpole_dqn/blob/torch/figures/DDQN_rewards.png)
 
-In this case, in evaluate mode the pole was banalcing for hours
+In this case, in evaluate mode the pole was balancing for hours

@@ -15,4 +15,4 @@ gamma = 0.99
 # Number of episodes to update the target network
 target_update_period = 10
 # What network to use (DQN, DDQN)
-algorithm = "DDQN"
+algorithm = "DQN"

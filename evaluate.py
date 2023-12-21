@@ -14,12 +14,13 @@ parser.add_argument('--render', action='store_true',
                     help='render the environment')
 parser.add_argument('--untrained', action='store_true', default=False,
                     help='use untrained model')
+parser.add_argument('--model', type=str, choices=['DDQN', 'DQN'], help='The model type to use.')
 args = parser.parse_args()
 
 if args.untrained:
     model_name = 'untrained.pth'
 else:
-    model_name = 'ddqn.pth'
+    model_name = args.model + '.pth'
 name = os.path.join(os.path.abspath(os.getcwd()), 'models', model_name)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
